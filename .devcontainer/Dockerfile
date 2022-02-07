@@ -14,6 +14,11 @@ RUN groupadd -g ${DOCKER_UID} ${DOCKER_GROUP} && \
     useradd -r -u ${DOCKER_UID} -g ${DOCKER_GROUP} -d ${DOCKER_HOME} ${DOCKER_USER} && \
     chown -R ${DOCKER_USER}:${DOCKER_GROUP} ${DOCKER_HOME}
 
+# to use the docker.sock..
+RUN groupadd docker
+RUN usermod -aG docker ${DOCKER_USER}
+
+
 RUN apt-get update && \
     apt-get install -y tree && \
     apt-get install -y sudo && \
