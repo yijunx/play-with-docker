@@ -9,7 +9,7 @@ services:
       - ..:/opt/yijunx/code
       - ~/etc/localtime:/opt/yijunx/etc/localtime
       - ~/etc/timezone:/opt/yijunx/etc/timezone
-      - ../../certs:/opt/yijunx/etc/certs
+      - ../certs:/opt/yijunx/etc/certs
       - /var/run/docker.sock:/var/run/docker.sock
     command: ["tail -f /dev/null"]
     privileged: true
